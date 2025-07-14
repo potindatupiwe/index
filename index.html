@@ -3,9 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Náutica Academy - Plataforma de Estudos para Provas de Arrais e Motonauta</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        nautical: '#0c4a6e',
+                        nauticalLight: '#0ea5e9',
+                        nauticalLighter: '#f0f9ff'
+                    }
+                }
+            }
+        }
+    </script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
         
@@ -13,10 +26,39 @@
             font-family: 'Montserrat', sans-serif;
             background-color: #f8fafc;
         }
-
-        .login-bg {
+        
+        .hero-section {
             background: linear-gradient(135deg, rgba(12, 74, 110, 0.9) 0%, rgba(14, 165, 233, 0.85) 100%);
             background-size: cover;
+            background-position: center;
+        }
+        
+        .wave-divider {
+            position: relative;
+            height: 100px;
+            overflow: hidden;
+        }
+        
+   
+        
+        .feature-card {
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .pricing-card {
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+        
+        .pricing-card:hover {
+            transform: scale(1.02);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
         }
         
         .btn-primary {
@@ -28,89 +70,351 @@
             transform: translateY(-3px);
             box-shadow: 0 10px 20px -5px rgba(14, 165, 233, 0.4);
         }
-
-        .input-focus:focus {
-            border-color: #0ea5e9;
-            box-shadow: 0 0 0 2px rgba(14, 165, 233, 0.2);
+        
+        .btn-outline {
+            border: 2px solid #0ea5e9;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-outline:hover {
+            background: #0ea5e9;
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px -5px rgba(14, 165, 233, 0.4);
+        }
+        
+        .testimonial-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15);
         }
     </style>
 </head>
-<body class="login-bg flex items-center justify-center min-h-screen p-4">
+<body class="text-gray-800">
+    <!-- Header/Navegação -->
+    <header class="bg-white shadow-sm fixed w-full z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                
+                
+                <nav class="hidden md:block">
+                    <ul class="flex space-x-8">
+                        <li><a href="#sobre" class="font-medium hover:text-nauticalLight">Sobre nós</a></li>
+                        <li><a href="#planos" class="font-medium hover:text-nauticalLight">Planos</a></li>
+                        <li><a href="#dep" class="font-medium hover:text-nauticalLight">Depoimentos</a></li>
+                        <li><a href="#contato" class="font-medium hover:text-nauticalLight">Contato</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="flex items-center space-x-4">
+                    <a href="#" class="btn-outline text-nauticalLight px-4 py-2 rounded-full font-medium">Entrar</a>
+                    <a href="#" class="btn-primary text-white px-6 py-2 rounded-full font-medium">Criar Conta</a>
+                </div>
+            </div>
+        </div>
+    </header>
 
-    <div class="w-full max-w-md bg-white rounded-2xl shadow-2xl p-8 space-y-6">
+    <!-- Hero Section -->
+    <section class="hero-section text-white pt-32 pb-24">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl mx-auto text-center">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">Prepare-se para sua prova de Arrais ou Motonauta</h1>
+                <p class="text-xl md:text-2xl mb-10 text-blue-100">A plataforma mais completa para estudos náuticos com simulados, conteúdo atualizado e acompanhamento de desempenho.</p>
+                
+                <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
+                    <a href="#" class="btn-primary text-white px-8 py-4 rounded-full font-bold text-lg shadow-lg">Comece Agora - 7 Dias Grátis</a>
+                    <a href="#" class="btn-outline text-white border-white hover:bg-white hover:text-nautical px-8 py-4 rounded-full font-bold text-lg">Ver Planos</a>
+                </div>
+            </div>
+        </div>
         
-        <!-- Cabeçalho -->
-        <div class="text-center">
-            <h1 class="text-3xl font-bold text-nautical">Acesse sua Conta</h1>
-            <p class="mt-2 text-gray-600">Bem-vindo(a) de volta </p>
-        </div>
+        <!-- Wave Divider -->
+       
+    </section>
 
-        <!-- Formulário de Login -->
-        <form class="space-y-6" action="#" method="POST">
-            <div class="space-y-4">
-                <!-- Campo de E-mail -->
-                <div>
-                    <label for="email-address" class="text-sm font-medium text-gray-700">E-mail</label>
-                    <div class="mt-1 relative rounded-md shadow-sm">
-                         <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
-                            <i class="fa fa-envelope text-gray-400"></i>
-                        </div>
-                        <input id="email-address" name="email" type="email" autocomplete="email" required 
-                               class="block w-full rounded-lg border-gray-300 pl-10 py-3 text-gray-900 input-focus focus:outline-none sm:text-sm" 
-                               placeholder="seuemail@exemplo.com">
+    <!-- Recursos da Plataforma -->
+    <section class="py-20 bg-nauticalLighter">
+        <div id="sobre" class="container mx-auto px-4">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-nautical mb-6">A melhor plataforma para sua aprovação</h2>
+                <p class="text-lg text-gray-600">Tudo que você precisa para passar na prova de Arrais Amador ou Motonauta com confiança e tranquilidade.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Recurso 1 -->
+                <div class="feature-card bg-white rounded-2xl p-8">
+                    <div class="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center mb-6">
+                        <i class="fas fa-book text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-nautical mb-4">Simulados Realistas</h3>
+                    <p class="text-gray-600 mb-6">Questões atualizadas e organizadas como na prova real. Cronômetro e ambiente similar ao dia do exame.</p>
+                    <div class="flex items-center text-nauticalLight font-medium">
+                        <span>Saiba mais</span>
+                        <i class="fas fa-arrow-right ml-2"></i>
                     </div>
                 </div>
-                <!-- Campo de Senha -->
-                <div>
-                    <label for="password" class="text-sm font-medium text-gray-700">Senha</label>
-                     <div class="mt-1 relative rounded-md shadow-sm">
-                         <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
-                            <i class="fa fa-lock text-gray-400"></i>
-                        </div>
-                        <input id="password" name="password" type="password" autocomplete="current-password" required 
-                               class="block w-full rounded-lg border-gray-300 pl-10 py-3 text-gray-900 input-focus focus:outline-none sm:text-sm" 
-                               placeholder="Sua senha">
+                
+                <!-- Recurso 2 -->
+                <div class="feature-card bg-white rounded-2xl p-8">
+                    <div class="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center mb-6">
+                        <i class="fas fa-chart-line text-green-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-nautical mb-4">Acompanhamento de Desempenho</h3>
+                    <p class="text-gray-600 mb-6">Analise seu progresso, identifique pontos fracos e foque seus estudos nas áreas que mais precisa.</p>
+                    <div class="flex items-center text-nauticalLight font-medium">
+                        <span>Saiba mais</span>
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </div>
+                </div>
+                
+                <!-- Recurso 3 -->
+                <div class="feature-card bg-white rounded-2xl p-8">
+                    <div class="w-16 h-16 rounded-full bg-purple-100 flex items-center justify-center mb-6">
+                        <i class="fas fa-mobile-alt text-purple-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-nautical mb-4">Acesso em Qualquer Lugar</h3>
+                    <p class="text-gray-600 mb-6">Estude no computador, tablet ou smartphone. Conteúdo disponível 24h por dia, 7 dias por semana.</p>
+                    <div class="flex items-center text-nauticalLight font-medium">
+                        <span>Saiba mais</span>
+                        <i class="fas fa-arrow-right ml-2"></i>
                     </div>
                 </div>
             </div>
-
-            <!-- Opções Adicionais -->
-            <div class="flex items-center justify-between text-sm">
-                <div class="flex items-center">
-                    <input id="remember-me" name="remember-me" type="checkbox" 
-                           class="h-4 w-4 rounded border-gray-300 text-[#0ea5e9] focus:ring-[#0c4a6e]">
-                    <label for="remember-me" class="ml-2 block text-gray-900">
-                        Lembrar-me
-                    </label>
-                </div>
-
-                <div>
-                    <a href="#" class="font-medium text-[#0ea5e9] hover:text-[#0c4a6e]">
-                        Esqueceu sua senha?
-                    </a>
-                </div>
-            </div>
-
-            <!-- Botão de Login -->
-            <div>
-                <button type="submit" 
-                        class="group relative w-full flex justify-center py-3 px-4 border border-transparent text-base font-bold rounded-full text-white btn-primary">
-                    Entrar
-                </button>
-            </div>
-        </form>
-
-        <!-- Link para Cadastro -->
-        <div class="text-center pt-4 border-t border-gray-200">
-            <p class="text-sm text-gray-600">
-                Ainda não tem uma conta?
-                <a href="#" class="font-bold text-[#0ea5e9] hover:text-[#0c4a6e]">
-                    Acesse os planos aqui
-                </a>
-            </p>
         </div>
+    </section>
 
-    </div>
+    <!-- Planos de Assinatura -->
+    <section class="py-20 bg-white">
+        <div id="planos" class="container mx-auto px-4">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-nautical mb-4">Escolha o plano ideal para você</h2>
+                <p class="text-lg text-gray-600">Acesso ilimitado a todos os simulados e recursos de estudo. Garantia de satisfação.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <!-- Plano Básico -->
+                <div class="pricing-card bg-white border border-gray-200 rounded-2xl p-8">
+                    <div class="text-center">
+                        <h3 class="text-2xl font-bold text-nautical mb-2">Plano Básico</h3>
+                        <p class="text-gray-600 mb-6">Ideal para quem está começando</p>
+                        
+                        <div class="mb-6">
+                            <span class="text-4xl font-bold text-nautical">R$ 97</span>
+                            <span class="text-gray-500">/ 3 meses</span>
+                        </div>
+                        
+                       
+                        
+                        <a href="#" class="btn-outline text-nauticalLight w-full py-3 rounded-lg font-bold">Assinar Plano</a>
+                    </div>
+                </div>
+                
+                <!-- Plano Recomendado -->
+                <div class="pricing-card bg-nautical text-white rounded-2xl p-8 relative">
+                    <div class="absolute top-0 right-0 bg-yellow-500 text-white px-4 py-1 rounded-bl-lg font-bold">Mais Popular</div>
+                    <div class="text-center">
+                        <h3 class="text-2xl font-bold mb-2">Plano Completo</h3>
+                        <p class="text-blue-100 mb-6">O melhor custo-benefício</p>
+                        
+                        <div class="mb-6">
+                            <span class="text-4xl font-bold">R$ 167</span>
+                            <span class="text-blue-200">/ 6 meses</span>
+                        </div>
+                        
+                     
+                        
+                        <a href="#" class="btn-primary text-white w-full py-3 rounded-lg font-bold">Assinar Plano</a>
+                    </div>
+                </div>
+                
+                <!-- Plano Premium -->
+                <div class="pricing-card bg-white border border-gray-200 rounded-2xl p-8">
+                    <div class="text-center">
+                        <h3 class="text-2xl font-bold text-nautical mb-2">Plano Premium</h3>
+                        <p class="text-gray-600 mb-6">Para quem quer a experiência completa</p>
+                        
+                        <div class="mb-6">
+                            <span class="text-4xl font-bold text-nautical">R$ 247</span>
+                            <span class="text-gray-500">/ 12 meses</span>
+                        </div>
+                      
+                        
+                        <a href="#" class="btn-outline text-nauticalLight w-full py-3 rounded-lg font-bold">Assinar Plano</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <p class="text-gray-600">Não tem certeza? Experimente nossa versão gratuita por 7 dias!</p>
+                <a href="#" class="text-nauticalLight font-bold mt-2 inline-block">Experimente grátis <i class="fas fa-arrow-right ml-2"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Depoimentos -->
+    <section class="py-20 bg-nauticalLighter">
+        <div id="dep" class="container mx-auto px-4">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-nautical mb-4">O que nossos alunos dizem</h2>
+                <p class="text-lg text-gray-600">Mais de 95% de aprovação nas últimas provas</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Depoimento 1 -->
+                <div class="testimonial-card p-8">
+                    <div class="flex items-center mb-6">
+                        <div class="w-14 h-14 rounded-full bg-blue-500 flex items-center justify-center text-white text-xl font-bold mr-4">
+                            PM
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg">Pedro Marques</h4>
+                            
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">"A plataforma foi essencial para minha aprovação! Os simulados são muito parecidos com a prova real e me deram a confiança que precisava."</p>
+                    <div class="flex text-yellow-400 mt-4">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <!-- Depoimento 2 -->
+                <div class="testimonial-card p-8">
+                    <div class="flex items-center mb-6">
+                        <div class="w-14 h-14 rounded-full bg-purple-500 flex items-center justify-center text-white text-xl font-bold mr-4">
+                            AM
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg">Ana Mendes</h4>
+                          
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">"Consegui estudar no meu ritmo mesmo com a rotina corrida. A análise de desempenho me mostrou exatamente onde focar meus estudos. Recomendo muito!"</p>
+                    <div class="flex text-yellow-400 mt-4">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <!-- Depoimento 3 -->
+                <div class="testimonial-card p-8">
+                    <div class="flex items-center mb-6">
+                        <div class="w-14 h-14 rounded-full bg-green-500 flex items-center justify-center text-white text-xl font-bold mr-4">
+                            CS
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg">Carlos Silva</h4>
+                            
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">"Fiz os dois cursos e passei nas duas provas de primeira! O conteúdo é completo e atualizado, e o suporte da equipe é excelente. Vale cada centavo investido."</p>
+                    <div class="flex text-yellow-400 mt-4">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Final -->
+    <section class="py-16 bg-nautical text-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">Comece sua jornada náutica hoje mesmo!</h2>
+                <p class="text-xl text-blue-100 mb-10">Não perca mais tempo estudando com materiais desatualizados. Tenha acesso a simulados reais e aumente suas chances de aprovação.</p>
+                
+                <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
+                    <a href="#" class="btn-primary bg-white text-nautical px-8 py-4 rounded-full font-bold text-lg shadow-lg hover:bg-blue-100">Experimente 7 Dias Grátis</a>
+                    <a href="#" class="btn-outline border-white text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white hover:text-nautical">Ver Planos</a>
+                </div>
+                
+                <div class="mt-8 flex items-center justify-center">
+                    <i class="fas fa-lock mr-2"></i>
+                    <span>Pagamento seguro via PIX ou cartão de crédito</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="dep" class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    
+                    <p class="text-gray-400 mb-4">A plataforma mais completa para estudos náuticos e preparação para provas de Arrais Amador e Motonauta.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Links Rápidos</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Sobre Nós</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Planos</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Depoimentos</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Contato</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Recursos</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Blog</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Dicas para Provas</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Legislação Atualizada</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Perguntas Frequentes</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Política de Privacidade</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Contato</h4>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fas fa-envelope mt-1 mr-3 text-gray-400"></i>
+                            
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fab fa-whatsapp mt-1 mr-3 text-gray-400"></i>
+                            <span class="text-gray-400">(21) 98765-4321</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-3 text-gray-400"></i>
+                            
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-500">
+                <p>© 2025 Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
 
 </body>
 </html>
